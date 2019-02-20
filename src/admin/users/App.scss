@@ -6,13 +6,17 @@
   background-color:#fff;
   overflow:hidden;
   font-size:14px;
-  
+
   @include rounded-corners(3px);
 
   .rt-thead.-header {
     box-shadow:none;
     background-color:$almost-black;
     color:#fff;
+  }
+
+  .rt-tbody .rt-tr-group {
+    border-bottom:1px solid $lightgrey-border;
   }
 
   .rt-td {

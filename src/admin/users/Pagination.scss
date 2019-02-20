@@ -7,11 +7,15 @@
 .Table__pagination {
   display:flex;
   justify-content:flex-end;
-  padding:20px 10px;
+  padding:15px 20px;
+  border-top:1px solid $lightgrey-border;
 }
 
 .Table__pageButton {
   font-size:15px;
+  font-family:Assistant;
+  font-weight:bold;
+  color:$standard-type;
   outline:none;
   border:none;
   background-color:transparent;
@@ -20,7 +24,7 @@
 
 .Table__pageButton:disabled {
   cursor: not-allowed;
-  color: gray;
+  color: $lightblue-type;
 }
 
 .Table__pageButton--active {
