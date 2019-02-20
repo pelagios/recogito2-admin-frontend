@@ -1,0 +1,33 @@
+.nav-menu {
+  position:absolute;
+  top:0;
+
+  .menu-options {
+    border:1px solid black;
+    width:300px;
+    max-height:0;
+    overflow:hidden;
+  }
+
+  .menu-options-enter,
+  .menu-options-enter-done {
+    max-height:90px;
+    transition:max-height 0.15s linear;
+    -webkit-transition:max-height 0.15s linear;
+  }
+
+  .menu-options-exit,
+  .menu-optionsr-exit-done {
+    max-height:0;
+    transition:max-height 0.15s linear;
+    -webkit-transition:max-height 0.15s linear;
+  }
+
+  .tab {
+    background-color:red;
+    width:40px;
+    height:40px;
+    cursor:pointer;
+  }
+
+}
