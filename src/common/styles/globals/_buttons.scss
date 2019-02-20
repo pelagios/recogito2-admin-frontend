@@ -1,6 +1,6 @@
 .btn {
-  background-color:$ocean;
-  border:1px solid $ocean;
+  background-color:$almost-black;
+  border:1px solid $almost-black;
   box-sizing:border-box;
   color:#fff;
   cursor:pointer;
@@ -15,23 +15,35 @@
   vertical-align:middle;
   @include rounded-corners(2px);
 
-  * { vertical-align:middle; }
   .icon { margin-right:4px; }
 }
 
-.btn.tiny {
-  padding:3px 15px;
+.btn.small {
+  padding:6px 15px;
   font-size:14px;
 }
 
-.btn:hover {
-  background-color:$ocean-hover;
-  border-color:$ocean-hover;
-}
-
 .btn.outline {
-  border:1px solid $ocean;
-  color:$ocean;
+  border:1px solid $almost-black;
+  color:$almost-black;
   background-color:transparent;
   text-shadow:none;
+}
+
+/** Red 'Error'-style button **/
+.btn.red {
+  border-color:$error-msg-type;
+  background-color:$error-msg-type;
+}
+
+.btn.red:hover {
+  background-color:darken($error-msg-type, 5%);
+}
+
+.btn.red.disabled,
+.btn.red:disabled,
+.btn.red.disabled:hover,
+.btn.red:disabled:hover {
+  border-color:lighten($error-msg-type, 25%);
+  background-color:lighten($error-msg-type, 25%);
 }

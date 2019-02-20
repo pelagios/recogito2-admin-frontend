@@ -1,4 +1,6 @@
 @import "../../../common/styles/globals/colors";
+@import "../../../common/styles/globals/forms";
+@import "../../../common/styles/globals/buttons";
 
 .user-details {
 
@@ -8,10 +10,10 @@
   }
 
   .identity {
+    border-bottom:1px solid $lightgrey-border;
 
     .basics, .extended {
       padding:10px;
-      background-color:$blueish-white;
     }
 
     .basics {
@@ -50,6 +52,29 @@
 
     }
 
+  }
+
+  .user-settings {
+    background-color:$blueish-white;
+    border-bottom:1px solid $lightgrey-border;
+
+    * { margin:0; }
+
+    form { padding: 20px 0; }
+  }
+
+  .footer {
+    padding:10px;
+    text-align:right;
+    background-color:#fff;
+
+    button {
+      margin:0 3px;
+    }
+
+    button.delete {
+      float:left;
+    }
   }
 
 }

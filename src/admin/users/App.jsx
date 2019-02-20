@@ -36,7 +36,7 @@ export default class App extends Component {
             member_since={this.state.selected_user.member_since}
             bio={this.state.selected_user.bio} 
             website={this.state.selected_user.website} 
-            onClose={this.deselectUser} />
+            onCancel={this.deselectUser} />
         }
       </React.Fragment>
     );
