@@ -12,10 +12,11 @@ export default class UserDetails extends Component {
     return (
       <Modal 
         className="user-details" 
+        handle=".identity"
         onClose={this.props.onClose}>
 
         <div className="identity">
-        
+
           <div className="basics">
             <h1>
               {this.props.real_name ? this.props.real_name : this.props.username}

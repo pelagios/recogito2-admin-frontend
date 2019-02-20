@@ -24,7 +24,8 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <NavigationMenu />
-
+        <h1 className="page-title">User Management</h1>
+        
         <UserTable 
           onSelectUser={this.selectUser} />
 

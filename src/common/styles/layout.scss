@@ -1,3 +1,5 @@
+@import "globals/fonts";
+
 html, body {
   background-color:$blueish-white;
   color:$almost-black;
@@ -33,4 +35,11 @@ h1, h2 {
   font-family:FontAwesome;
   font-weight:normal;
   @include noselect();
+}
+
+.nostyle {
+  outline:none;
+  background:none;
+  border:none;
+  cursor:pointer;
 }

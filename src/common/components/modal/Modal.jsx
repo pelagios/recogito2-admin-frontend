@@ -9,7 +9,7 @@ export default class Modal extends Component {
     return (
       <div className={`clicktrap ${this.props.className}`}>
         <div className="modal-wrapper">
-          <Draggable handle=".modal-header">
+          <Draggable handle={this.props.handle || '.modal-header'}>
             <div className="modal">
               <div className="modal-header">
                 <h1 className="title">{this.props.title}</h1>
