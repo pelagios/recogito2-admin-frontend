@@ -22,8 +22,15 @@ export default class App extends Component {
 
   onFetchData = (state, instance) => {
     const offset = this.state.page_size * state.page;
+    const size = this.state.page_size;
+
+    const sort_state = state.sorted && state.sorted[0];
+    const sort = sort_state ? sort_state.id : 'member_since';
+    const order = sort_state && sort_state.desc ? 'desc' : 'asc';
+
+    const url = `/admin/users.json?offset=${offset}&size=${size}&sortBy=${sort}&sortOrder=${order}`;
     
-    axios.get(`/admin/users.json?offset=${offset}&size=${this.state.page_size}`).then((result) => {
+    axios.get(url).then((result) => {
       this.setState({ 
         loading: false,
         users: result.data.items,

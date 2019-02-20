@@ -6,6 +6,9 @@
   background-color:#fff;
   overflow:hidden;
   font-size:14px;
+  border-width:0 1px 1px 1px;
+  border-style:solid;
+  border-color:$almost-black;
 
   @include rounded-corners(3px);
 
@@ -21,5 +24,13 @@
 
   .rt-td {
     padding:7px;
+  }
+
+  .rt-thead .rt-th.-sort-asc {
+    box-shadow:inset 0 4px 0 0 $ocean-hover;
+  }
+
+  .rt-thead .rt-th.-sort-desc {
+    box-shadow:inset 0 -4px 0 0 $ocean-hover;
   }
 }
