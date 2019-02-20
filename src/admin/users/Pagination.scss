@@ -1,0 +1,29 @@
+@import "../../common/styles/globals/includes/colors";
+
+.Table__itemCount {
+  font-size:15px;
+}
+
+.Table__pagination {
+  display:flex;
+  justify-content:flex-end;
+  padding:20px 10px;
+}
+
+.Table__pageButton {
+  font-size:15px;
+  outline:none;
+  border:none;
+  background-color:transparent;
+  cursor:pointer;
+}
+
+.Table__pageButton:disabled {
+  cursor: not-allowed;
+  color: gray;
+}
+
+.Table__pageButton--active {
+  color: $ocean;
+  font-weight: bold;
+}

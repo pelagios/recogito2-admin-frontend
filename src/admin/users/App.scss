@@ -1,0 +1,21 @@
+@import "../../common/styles/globals/includes/colors";
+@import "../../common/styles/globals/includes/mixins";
+
+.ReactTable.user-table {
+  margin:40px 0 20px 0;
+  background-color:#fff;
+  overflow:hidden;
+  font-size:14px;
+  
+  @include rounded-corners(3px);
+
+  .rt-thead.-header {
+    box-shadow:none;
+    background-color:$almost-black;
+    color:#fff;
+  }
+
+  .rt-td {
+    padding:7px;
+  }
+}
