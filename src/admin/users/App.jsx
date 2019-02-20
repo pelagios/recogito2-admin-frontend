@@ -16,7 +16,7 @@ export default class App extends Component {
     loading: true,
     total_pages: -1,
     current_page: 0,
-    page_size: 20,
+    page_size: 15,
     users: [],
     selected_user: null
   }
