@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import './Pagination.scss';
-
 const defaultButton = props => <button {...props}>{props.children}</button>;
 
 /**

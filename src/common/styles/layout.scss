@@ -1,5 +1,3 @@
-@import "globals/globals";
-
 html, body {
   background-color:$blueish-white;
   color:$almost-black;
@@ -24,4 +22,15 @@ html, body {
   font-size:26px;
   font-weight:normal;
   z-index:0;
+}
+
+h1, h2 {
+  margin:0;
+  padding:0;
+}
+
+.icon {
+  font-family:FontAwesome;
+  font-weight:normal;
+  @include noselect();
 }

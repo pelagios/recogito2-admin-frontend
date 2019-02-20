@@ -1,0 +1,55 @@
+@import "../../../common/styles/globals/colors";
+
+.user-details {
+
+  .close {
+    color:$almost-black;
+    font-size:18px;
+  }
+
+  .identity {
+
+    .basics, .extended {
+      padding:10px;
+      background-color:$blueish-white;
+    }
+
+    .basics {
+
+      h1 {
+        margin-top:-3px;
+        padding:3px 0;
+        font-size:19px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      .member-since {
+        font-size:14px;
+        padding:0;
+        margin:0;
+        color:$lightblue-type;
+        font-weight:normal;
+      }
+
+    }
+
+    .extended {
+      padding-bottom:20px;
+
+      p {
+        margin:0;
+        padding:0;
+      }
+
+      .homepage a {
+        color:$ocean;
+        text-decoration:underline;
+      }
+
+    }
+
+  }
+
+}
