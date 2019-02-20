@@ -1,0 +1,17 @@
+@import "globals/globals";
+
+#app {
+  max-width:1150px;
+  min-width:920px;
+  margin:0 auto;
+  position:relative;
+}
+
+.page-title {
+  position:absolute;
+  top:0;
+  left:55px;
+  font-size:26px;
+  font-weight:normal;
+  z-index:0;
+}

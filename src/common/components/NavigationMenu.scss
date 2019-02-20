@@ -1,17 +1,45 @@
+@import "../styles/globals/globals";
+
 .nav-menu {
   position:absolute;
-  top:0;
+  top:-1px;
+  z-index:1;
 
   .menu-options {
-    border:1px solid black;
+    margin:0;
+    border-width:0 1px 1px 1px;
+    border-style:solid;
+    border-color:$almost-black;
     width:300px;
     max-height:0;
     overflow:hidden;
+    list-style-type:none;
+    padding:0;
+    background-color:#fff;
+  }
+
+  li {
+    margin:0;
+    padding:0;
+    position:relative;
+
+    a {
+      color:$almost-black;
+      font-size:15px;
+      display:inline-block;
+      padding:12px 15px;
+      text-decoration:none;
+      width:100%;
+    }
+
+    a:hover {
+      background-color:rgba(0, 0, 0, 0.05);
+    }
   }
 
   .menu-options-enter,
   .menu-options-enter-done {
-    max-height:90px;
+    max-height:200px;
     transition:max-height 0.15s linear;
     -webkit-transition:max-height 0.15s linear;
   }
@@ -24,10 +52,17 @@
   }
 
   .tab {
-    background-color:red;
+    background-color:$almost-black;
     width:40px;
-    height:40px;
+    height:36px;
+    color:#fff;
+    font-size:21px;
+    text-align:center;
+    padding-top:7px;
+    box-sizing:border-box;
     cursor:pointer;
+
+    @include rounded-corners-bottom(3px);
   }
 
 }

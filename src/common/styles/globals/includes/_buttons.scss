@@ -1,0 +1,37 @@
+.btn {
+  background-color:$ocean;
+  border:1px solid $ocean;
+  box-sizing:border-box;
+  color:#fff;
+  cursor:pointer;
+  display:inline-block;
+  font-family:Assistant;
+  font-size:16px;
+  margin:0;
+  outline:none;
+  text-decoration:none;
+  white-space:nowrap;
+  padding:8px 35px;
+  vertical-align:middle;
+  @include rounded-corners(2px);
+
+  * { vertical-align:middle; }
+  .icon { margin-right:4px; }
+}
+
+.btn.tiny {
+  padding:3px 15px;
+  font-size:14px;
+}
+
+.btn:hover {
+  background-color:$ocean-hover;
+  border-color:$ocean-hover;
+}
+
+.btn.outline {
+  border:1px solid $ocean;
+  color:$ocean;
+  background-color:transparent;
+  text-shadow:none;
+}
