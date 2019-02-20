@@ -13,11 +13,12 @@ import 'react-table/react-table.css'
 export default class App extends Component {
 
   state = {
+    loading: true,
     total_pages: -1,
     current_page: 0,
     page_size: 20,
     users: [],
-    loading: true
+    selected_user: null
   }
 
   onFetchData = (state, instance) => {
@@ -37,6 +38,10 @@ export default class App extends Component {
         total_pages: Math.ceil(result.data.total / this.state.page_size)
       });
     });
+  }
+
+  onRowClick = (user) => {
+    this.setState({ selected_user: user });
   }
 
   render() {
@@ -66,7 +71,10 @@ export default class App extends Component {
           resizable={false}
           loading={this.state.loading}
           manual
-          onFetchData={this.onFetchData}>
+          onFetchData={this.onFetchData}
+          getTdProps={(_, rowInfo) => {
+            return { onClick: () => { this.onRowClick(rowInfo.original) }}
+          }} >
         </ReactTable>
       </div>
     );
