@@ -20,18 +20,6 @@ export default class UserDetails extends Component {
       });
   }
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.onKeydown, false);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.onKeydown, false);
-  }
-
-  onKeydown= (evt) => {
-    if (evt.which === 27) this.props.onCancel();
-  }
-
   formatURL(url) {
     return url.replace(/^https?:\/\//i, '');
   }
