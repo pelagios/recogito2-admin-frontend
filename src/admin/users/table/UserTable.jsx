@@ -15,8 +15,10 @@ export default class UserTable extends Component {
     page_size: 15,
     users: []
   }
+  
+  onFetchData = (state, _) => {
+    this.setState({ loading: true });
 
-  onFetchData = (state, instance) => {
     const offset = this.state.page_size * state.page;
     const size = this.state.page_size;
 

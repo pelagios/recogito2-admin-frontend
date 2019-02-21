@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { render } from 'react-dom';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
 import UserDetails from './details/UserDetails.jsx';
@@ -20,6 +21,13 @@ export default class App extends Component {
     this.setState({ selected_user: null });
   }
 
+  deleteUser = () => {
+    // TODO prompt
+    axios.delete(`/admin/user/${this.state.selected_user.username}`).then(result => {
+      this.setState({ selected_user: null }, () => window.location.reload());
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -36,7 +44,8 @@ export default class App extends Component {
             member_since={this.state.selected_user.member_since}
             bio={this.state.selected_user.bio} 
             website={this.state.selected_user.website} 
-            onCancel={this.deselectUser} />
+            onCancel={this.deselectUser} 
+            onDeleteUser={this.deleteUser} />
         }
       </React.Fragment>
     );

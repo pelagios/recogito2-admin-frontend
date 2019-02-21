@@ -64,19 +64,20 @@ export default class UserDetails extends Component {
 
         <div className="footer">
           <button
-            className="btn small red delete">
-            <span class="icon">&#xf1f8;</span> Delete This Account
+            className="btn small red delete"
+            onClick={this.props.onDeleteUser}>
+            <span className="icon">&#xf1f8;</span> Delete This Account
           </button>
 
           <button
             className="btn small outline"
             onClick={this.props.onCancel}>
-            <span class="icon">&#xf00d;</span> Cancel
+            <span className="icon">&#xf00d;</span> Cancel
           </button>
 
           <button
             className="btn small">
-            <span class="icon">&#xf00c;</span> Save
+            <span className="icon">&#xf00c;</span> Save
           </button>
         </div>
       </Modal>
