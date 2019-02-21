@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { render } from 'react-dom';
+import axios from 'axios';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
 import UserDetails from './details/UserDetails.jsx';
 import UserTable from './table/UserTable.jsx';
