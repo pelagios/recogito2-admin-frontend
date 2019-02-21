@@ -21,5 +21,13 @@ The client-side user interface for the Recogito __system administration area__ p
 Run `npm run build` to build the compiled distribution. This will generate a `/build` folder with the following structure:
 
 ```
-
+/static
+/style
+asset-manifest.json
+authorities.scala.html
+users.scala.html
 ```
+
+- copy the /static folder into the /public/javascripts folder of Recogito, replacing existing contents
+- in Recogito's /app/views/admin directory, replace the existing `.scala.html` files
+- restart Recogito
