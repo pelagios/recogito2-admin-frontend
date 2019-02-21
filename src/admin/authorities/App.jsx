@@ -42,7 +42,9 @@ export default class App extends Component {
         </div>
 
         {this.state.selected && 
-          <AuthorityDetails value={this.state.selected} />
+          <AuthorityDetails 
+            value={this.state.selected} 
+            onCancel={() => this.setState({ selected: null })} />
         }
       </React.Fragment>
     );
