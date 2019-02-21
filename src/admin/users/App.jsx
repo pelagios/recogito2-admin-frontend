@@ -25,7 +25,7 @@ export default class App extends Component {
   saveUserSettings = (settings) => {
     axios.put(`/admin/user/${this.state.selected_user.username}`, settings)
       .then(result => {
-        this.setState({ selected_user: null });
+        this.setState({ selected_user: null }, () => window.location.reload());
       });
   }
 
