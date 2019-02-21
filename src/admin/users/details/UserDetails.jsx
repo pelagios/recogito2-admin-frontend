@@ -27,7 +27,7 @@ export default class UserDetails extends Component {
     return (
       <Modal 
         className="user-details" 
-        handle=".identity"
+        title="User Details"
         onClose={this.props.onCancel}>
 
         <div className="identity">

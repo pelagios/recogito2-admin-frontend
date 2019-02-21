@@ -4,11 +4,6 @@
 
 .user-details {
 
-  .close {
-    color:$almost-black;
-    font-size:18px;
-  }
-
   .identity {
     border-bottom:1px solid $lightgrey-border;
 
@@ -55,17 +50,22 @@
   }
 
   .user-settings {
+    font-size:15px;
     background-color:$blueish-white;
 
-    * { margin:0; }
+    * { 
+      margin:0; 
+    }
 
-    form { padding: 40px 0; }
+    form { 
+      padding: 30px 0; 
+    }
   }
 
   .footer {
-    padding:10px;
+    border-top:1px solid $lightgrey-border;
+    padding:15px 10px;
     text-align:right;
-    background-color:$blueish-white;
 
     button {
       margin:0 3px;

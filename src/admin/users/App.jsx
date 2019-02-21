@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
 import UserDetails from './details/UserDetails.jsx';
 import UserTable from './table/UserTable.jsx';
+import { confirm } from '../../common/components/confirm/Confirm.js';
 
 import './App.scss';
 
@@ -22,9 +23,20 @@ export default class App extends Component {
   }
 
   deleteUser = () => {
-    // TODO prompt
-    axios.delete(`/admin/user/${this.state.selected_user.username}`).then(result => {
-      this.setState({ selected_user: null }, () => window.location.reload());
+    confirm({
+      title: 'Delete Account',
+      message: 'This operation is not reversible. Are your sure?',
+      type: 'WARNING',
+
+      onConfirm: () => {
+        axios.delete(`/admin/user/${this.state.selected_user.username}`).then(result => {
+          this.setState({ selected_user: null }, () => window.location.reload());
+        });
+      },
+
+      onCancel: () => {
+        // Do nothing
+      }
     });
   }
 
