@@ -1,3 +1,45 @@
 @import "../../common/styles/globals/colors";
 @import "../../common/styles/globals/mixins";
+@import "../../common/styles/globals/buttons";
 @import "../../common/styles/layout";
+
+.authority-list {
+  margin:40px 0 20px 0;
+  background-color:#fff;
+  border:1px solid $almost-black;
+  position:relative;
+  @include rounded-corners(3px);
+  overflow:hidden;
+
+  table {
+    width:100%;
+    border-collapse:collapse;
+  }
+
+  thead {
+    background-color:$almost-black;
+    color:#fff;
+
+    th {
+      font-size:14px;
+      padding:5px;
+      font-weight:normal;
+      text-align:left;
+    }
+  }
+
+  tbody {
+
+    td {
+      border-bottom:1px solid $lightgrey-border;
+      padding:7px;
+      font-size:14px;
+    }
+
+  }
+
+}
+
+.footer {
+  text-align:right;
+}
