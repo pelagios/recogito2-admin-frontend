@@ -107,8 +107,8 @@ module.exports = {
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the app code.
   entry: {
-    authorities: [paths.appSrc + '/authorities/App.jsx'],
-    users: [paths.appSrc + '/users/App.jsx']
+    authorities: [paths.appSrc + '/admin/authorities/App.jsx'],
+    users: [paths.appSrc + '/admin/users/App.jsx']
   },
   output: {
     // The build folder.

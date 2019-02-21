@@ -16,3 +16,10 @@ The client-side user interface for the Recogito __system administration area__ p
 - Run `npm start` to launch development mode
 - If your browser doesn't start automatically, go to http://localhost:3000
 
+## Building & Deployment
+
+Run `npm run build` to build the compiled distribution. This will generate a `/build` folder with the following structure:
+
+```
+
+```
