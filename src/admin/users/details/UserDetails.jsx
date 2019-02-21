@@ -7,6 +7,19 @@ import './UserDetails.scss';
 
 export default class UserDetails extends Component {
 
+  state = {
+    quota: this.props.quota,
+    is_admin: this.props.isAdmin
+  }
+
+  componentWillReceiveProps(next) {
+    if (next.quota !== this.state.quota || next.is_admin !== this.state.isAdmin)
+      this.setState({
+        quota: next.quota,
+        is_admin: next.is_admin
+      });
+  }
+
   componentDidMount() {
     document.addEventListener('keydown', this.onKeydown, false);
   }
@@ -23,7 +36,24 @@ export default class UserDetails extends Component {
     return url.replace(/^https?:\/\//i, '');
   }
 
-  render() {      
+  handleChangeQuota = (evt) => {
+    this.setState({ quota: evt.target.value });
+  }
+
+  handleSetAdmin = (evt) => {
+    this.setState({ is_admin: evt.target.checked });
+  }
+
+  onSave = (evt) => {
+    evt.preventDefault();
+
+    this.props.onSave({
+      quota: parseInt(this.state.quota),
+      is_admin: this.state.is_admin
+    });
+  }
+
+  render() {   
     return (
       <Modal 
         className="user-details" 
@@ -56,9 +86,18 @@ export default class UserDetails extends Component {
         </div>
 
         <div className="user-settings">
-          <form className="crud">
-            <StringField name="quota" label="Quota (MB)" value={200} />
-            <CheckboxField name="is_admin" label="System Administrator" />
+          <form className="crud" onSubmit={this.onSave}>
+            <StringField
+              name="quota" 
+              label="Quota (MB)" 
+              value={this.state.quota} 
+              onChange={this.handleChangeQuota} />
+
+            <CheckboxField 
+              name="is_admin" 
+              label="System Administrator" 
+              checked={this.state.is_admin}
+              onChange={this.handleSetAdmin} />
           </form>
         </div>
 
@@ -76,7 +115,8 @@ export default class UserDetails extends Component {
           </button>
 
           <button
-            className="btn small">
+            className="btn small"
+            onClick={this.onSave}>
             <span className="icon">&#xf00c;</span> Save
           </button>
         </div>

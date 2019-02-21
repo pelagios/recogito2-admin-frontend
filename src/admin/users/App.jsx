@@ -22,6 +22,13 @@ export default class App extends Component {
     this.setState({ selected_user: null });
   }
 
+  saveUserSettings = (settings) => {
+    axios.put(`/admin/user/${this.state.selected_user.username}`, settings)
+      .then(result => {
+        this.setState({ selected_user: null });
+      });
+  }
+
   deleteUser = () => {
     confirm({
       title: 'Delete Account',
@@ -56,7 +63,10 @@ export default class App extends Component {
             member_since={this.state.selected_user.member_since}
             bio={this.state.selected_user.bio} 
             website={this.state.selected_user.website} 
+            quota={this.state.selected_user.quota}
+            isAdmin={this.state.selected_user.is_admin}
             onCancel={this.deselectUser} 
+            onSave={this.saveUserSettings}
             onDeleteUser={this.deleteUser} />
         }
       </React.Fragment>
