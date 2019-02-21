@@ -6,7 +6,10 @@ export default class AuthorityList extends Component {
 
   render() {
     const rows = this.props.authorities.map(authority => 
-      <tr onClick={evt => this.props.onClick(authority)}>
+      <tr 
+        key={authority.identifier}
+        onClick={evt => this.props.onSelect(authority)}>
+
         {authority.conflicted ?
           <td className="conflicted-warning"><span className="icon">&#xf071;</span></td> :
           <td></td>

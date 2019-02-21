@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { render } from 'react-dom';
 import AuthorityList from './list/AuthorityList.jsx';
+import AuthorityDetails from './details/AuthorityDetails.jsx';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
 
 import './App.scss';
@@ -9,7 +10,8 @@ import './App.scss';
 export default class App extends Component {
 
   state = {
-    authorities: []
+    authorities: [],
+    selected: null
   }
 
   componentDidMount() {
@@ -19,19 +21,29 @@ export default class App extends Component {
       });
   }
 
+  handleSelectAuthority= (authority) => {
+    this.setState({ selected: authority });
+  }
+
   render() {
     return (
       <React.Fragment>
         <NavigationMenu />
         <h1 className="page-title">Entity Management</h1>      
 
-        <AuthorityList authorities={this.state.authorities} />  
+        <AuthorityList 
+          authorities={this.state.authorities} 
+          onSelect={this.handleSelectAuthority} />  
         
         <div className="footer">
           <button className="btn" onClick={this.props.onAddNew}>
-            <span class="icon">&#xf055;</span> Add New
+            <span className="icon">&#xf055;</span> Add New
           </button>
         </div>
+
+        {this.state.selected && 
+          <AuthorityDetails value={this.state.selected} />
+        }
       </React.Fragment>
     );
   }
