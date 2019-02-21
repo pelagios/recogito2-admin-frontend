@@ -4,6 +4,8 @@ import ColorField from '../../../common/components/form/ColorField.jsx';
 import FileField from '../../../common/components/form/FileField.jsx';
 import StringField from '../../../common/components/form/StringField.jsx';
 
+import './AuthorityDetails.scss';
+
 export default class AuthorityDetails extends Component {
 
   render() {

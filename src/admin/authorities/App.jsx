@@ -37,7 +37,7 @@ export default class App extends Component {
         
         <div className="footer">
           <button className="btn" onClick={this.props.onAddNew}>
-            <span className="icon">&#xf055;</span> Add New
+            <span className="icon">&#xf055;</span> Add Authority File
           </button>
         </div>
 
