@@ -56,17 +56,16 @@
 
   .user-settings {
     background-color:$blueish-white;
-    border-bottom:1px solid $lightgrey-border;
 
     * { margin:0; }
 
-    form { padding: 20px 0; }
+    form { padding: 40px 0; }
   }
 
   .footer {
     padding:10px;
     text-align:right;
-    background-color:#fff;
+    background-color:$blueish-white;
 
     button {
       margin:0 3px;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../../../common/components/modal/Modal.jsx';
+import CheckboxField from '../../../common/components/form/CheckboxField.jsx';
 import StringField from '../../../common/components/form/StringField.jsx';
 
 import './UserDetails.scss';
@@ -57,13 +58,14 @@ export default class UserDetails extends Component {
         <div className="user-settings">
           <form className="crud">
             <StringField name="quota" label="Quota (MB)" value={200} />
+            <CheckboxField name="is_admin" label="System Administrator" />
           </form>
         </div>
 
         <div className="footer">
           <button
             className="btn small red delete">
-            <span class="icon">&#xf1f8;</span> Delete Account
+            <span class="icon">&#xf1f8;</span> Delete This Account
           </button>
 
           <button
