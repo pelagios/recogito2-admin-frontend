@@ -30,6 +30,10 @@
 
   tbody {
 
+    a {
+      color:$almost-black;
+    }
+
     td {
       border-bottom:1px solid $lightgrey-border;
       padding:7px;

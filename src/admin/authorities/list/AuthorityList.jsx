@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 const fmt = new Intl.NumberFormat('en-US');
 
+const TYPE_ICONS = {
+  PLACE : '\uf041',
+  PERSON: '\uf007'
+}
+
 export default class AuthorityList extends Component {
 
   render() {
@@ -14,8 +19,15 @@ export default class AuthorityList extends Component {
           <td className="conflicted-warning"><span className="icon">&#xf071;</span></td> :
           <td></td>
         }
-        <td>{authority.identifier}</td>
-        <td>{authority.shortname}</td>
+        <td><span className="icon">{'\uf041'}</span></td>
+        <td>
+          { 
+            authority.homepage ? 
+              authority.shortname : <a href="">{authority.shortname}</a>
+          }
+        </td>
+        <td>{authority.fullname}</td>
+        <td>{authority.shortcode}</td>
         <td className="align-right">{fmt.format(authority.count)}</td>
       </tr>
     );
@@ -26,9 +38,11 @@ export default class AuthorityList extends Component {
           <thead>
             <tr>
               <th></th>
-              <th>Identifier</th>
-              <th>Name</th>
-              <th className="align-right">Records</th>
+              <th>Type</th>
+              <th>Shortname</th>
+              <th>Full Name</th>
+              <th>Shortcode</th>
+              <th className="align-right"># Records</th>
             </tr>
           </thead>
 
