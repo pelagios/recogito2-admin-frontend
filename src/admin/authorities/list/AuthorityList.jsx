@@ -23,7 +23,7 @@ export default class AuthorityList extends Component {
         <td>
           { 
             authority.homepage ? 
-              authority.shortname : <a href={authority.homepage} target="_blank" rel="noopener noreferrer">{authority.shortname}</a>
+              <a href={authority.homepage} target="_blank" rel="noopener noreferrer">{authority.shortname}</a> : authority.shortname
           }
         </td>
         <td>{authority.fullname}</td>

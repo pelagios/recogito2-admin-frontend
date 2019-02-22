@@ -43,7 +43,7 @@ export default class DetailsContainer extends Component {
       axios.post('/admin/gazetteers', formdata)
         .then(result => {
           this.setState({ operation_pending: false });
-          this.props.onUpdate(authority);
+          this.props.onSave(authority);
         })
         .catch(error => {
           this.setState({ errorMessage: error.response });
