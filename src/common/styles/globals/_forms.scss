@@ -102,3 +102,23 @@ form.crud {
 
 }
 
+.flash-message {
+  padding:15px 12px;
+
+  .icon {
+    float:right;
+  }
+}
+
+.flash-message.success {
+  color:$success-msg-type;
+  background-color:$success-msg-bg;
+  border-bottom:1px solid $success-msg-border;
+}
+
+.flash-message.error {
+  color:$error-msg-type;
+  background-color:$error-msg-bg;
+  border-bottom:1px solid $error-msg-border;
+}
+

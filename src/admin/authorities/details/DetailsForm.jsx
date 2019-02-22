@@ -37,6 +37,13 @@ export default class DetailsForm extends Component {
         onClose={this.props.onCancel}>
 
         <div className="authority-details">
+          { 
+            this.props.errorMessage &&
+              <div className="error flash-message">
+                <span className="icon">&#xf00d;</span> {this.props.errorMessage}
+              </div>
+          }
+
           <form className="crud" onSubmit={this.onSave}>
             <StringField
               name="identifier"
@@ -90,12 +97,13 @@ export default class DetailsForm extends Component {
           </form>
 
           <div className="footer">
-            {!this.state.isNew &&
-              <button
-                className="btn small red delete"
-                onClick={this.props.onDelete}>
-                <span className="icon">&#xf1f8;</span> Delete
-              </button>
+            {
+              !this.state.isNew &&
+                <button
+                  className="btn small red delete"
+                  onClick={this.props.onDelete}>
+                  <span className="icon">&#xf1f8;</span> Delete
+                </button>
             }
 
             <button
