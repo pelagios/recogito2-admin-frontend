@@ -75,6 +75,26 @@ export default class DetailsForm extends Component {
               value={this.props.filename}
               buttonClass="btn add-file" />
           </form>
+
+          <div className="footer">
+          <button
+            className="btn small red delete"
+            onClick={this.props.onDeleteUser}>
+            <span className="icon">&#xf1f8;</span> Delete
+          </button>
+
+          <button
+            className="btn small outline"
+            onClick={this.props.onCancel}>
+            <span className="icon">&#xf00d;</span> Cancel
+          </button>
+
+          <button
+            className="btn small"
+            onClick={this.onSave}>
+            <span className="icon">&#xf00c;</span> Save
+          </button>
+          </div>
         </div>
       </Modal>
     );

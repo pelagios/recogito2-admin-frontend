@@ -29,7 +29,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <NavigationMenu />
-        <h1 className="page-title">Entity Management</h1>      
+        <h1 className="page-title">Authority Management</h1>      
 
         <AuthorityList 
           authorities={this.state.authorities} 
