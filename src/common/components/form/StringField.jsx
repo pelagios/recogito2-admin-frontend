@@ -11,7 +11,8 @@ export default class StringField extends Component {
             type="text"
             id={this.props.name}
             name={this.props.name}
-            autoComplete="false"
+            autoComplete="off"
+            readOnly={this.props.readOnly}
             value={this.props.value}
             onChange={this.props.onChange} />
         </dd>

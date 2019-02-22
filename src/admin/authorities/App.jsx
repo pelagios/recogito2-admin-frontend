@@ -25,8 +25,21 @@ export default class App extends Component {
     this.setState({ selected: authority });
   }
 
-  handleDeleted = (authority) => {
+  handleUpdate = (authority) => {
+    const updatedAuthorities = this.state.authorities.map(a => {
+      return (a.identifier === authority.identifier) ?
+        { ...a, ...authority } : a;
+    });
+
+    this.setState({ 
+      authorities: updatedAuthorities,
+      selected: null 
+    });
+  }
+
+  handleDelete = (authority) => {
     // TODO
+    this.setState({ selected: null });
   }
 
   render() {
@@ -48,7 +61,8 @@ export default class App extends Component {
         {this.state.selected && 
           <AuthorityDetails 
             value={this.state.selected} 
-            onDelete={this.handleDeleted}
+            onUpdate={this.handleUpdate}
+            onDelete={this.handleDelete}
             onCancel={() => this.setState({ selected: null })} />
         }
       </React.Fragment>

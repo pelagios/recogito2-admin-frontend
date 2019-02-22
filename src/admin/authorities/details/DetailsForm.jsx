@@ -23,8 +23,8 @@ export default class DetailsForm extends Component {
   }
 
   onSave = (evt) => {
-    evt.preventDefault();
     this.props.onSave(this.state);
+    evt.preventDefault();
   }
 
   render() {
@@ -39,6 +39,7 @@ export default class DetailsForm extends Component {
             <StringField
               name="identifier"
               label="Identifier"
+              readOnly={true}
               value={this.state.identifier}
               onChange={(e) => this.onChange({ identifier: e.target.value })}/>
 

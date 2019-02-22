@@ -9,11 +9,46 @@ import './AuthorityDetails.scss';
 export default class DetailsContainer extends Component {
 
   state = {
-    operation_pending: false
+    operation_pending: false,
+    errorMessage: null
   }
 
-  handleSave = (data) => {
-    console.log(data);
+  validate(authority) {
+    const hasIdentifier = authority.identifier;
+    const hasShortname = authority.shortname;
+
+    // Identifier and shortname are required properties
+    if (!hasIdentifier && !hasShortname)
+      this.setState({ errorMessage: 'Identifier and shortname are required properties' })
+    else if (!hasIdentifier)
+      this.setState({ errorMessage: 'Identifier is required' })
+    else if (!hasShortname)
+      this.setState({ errorMessage: 'Shortname is required' })
+    else
+      this.setState({ errorMessage: null });
+
+    return hasIdentifier && hasShortname;
+  }
+
+  handleSave = (authority) => {
+    if (this.validate(authority)) {
+      const formdata = new FormData();
+
+      Object.keys(authority).forEach(key => {
+        const val = authority[key];
+        if (val) formdata.append(key, val);
+      });
+
+      this.setState({ operation_pending: true });
+      axios.post('/admin/gazetteers', formdata)
+        .then(result => {
+          this.setState({ operation_pending: false });
+          this.props.onUpdate(authority);
+        })
+        .catch(error => {
+          this.setState({ errorMessage: error.response });
+        });
+    }
   }
 
   handleDelete = (authority) => {
@@ -40,6 +75,7 @@ export default class DetailsContainer extends Component {
     return (
       <DetailsForm 
         loading={this.state.operation_pending}
+        errorMessage={this.state.errorMessage}
         value={this.props.value} 
         onCancel={this.props.onCancel} 
         onSave={this.handleSave} 
