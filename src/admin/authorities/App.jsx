@@ -38,8 +38,10 @@ export default class App extends Component {
   }
 
   handleDelete = (authority) => {
-    // TODO
-    this.setState({ selected: null });
+    this.setState({ 
+      authorities: this.state.authorities.filter(a => a.identifier !== authority.identifier),
+      selected: null 
+    });
   }
 
   render() {

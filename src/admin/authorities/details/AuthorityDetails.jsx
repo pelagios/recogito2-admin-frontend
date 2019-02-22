@@ -59,7 +59,7 @@ export default class DetailsContainer extends Component {
 
       onConfirm: () => {
         this.setState({ operation_pending: true });
-        axios.delete(`/admin/gazetteers/${this.props.value.identifier}`).then(result => {
+        axios.delete(`/admin/gazetteers/${encodeURIComponent(this.props.value.identifier)}`).then(result => {
           this.setState({ selected_user: null }, () => window.location.reload());
         }).then(result => {
           this.setState({ operation_pending: false });
