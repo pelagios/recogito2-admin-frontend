@@ -19,7 +19,7 @@ export default class AuthorityList extends Component {
           <td className="conflicted-warning"><span className="icon">&#xf071;</span></td> :
           <td></td>
         }
-        <td><span className="icon">{TYPE_ICONS[authority.type]}</span></td>
+        <td><span className="icon">{TYPE_ICONS[authority.authority_type]}</span></td>
         <td>
           { 
             authority.homepage ? 

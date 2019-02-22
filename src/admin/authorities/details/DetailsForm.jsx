@@ -8,6 +8,7 @@ import StringField from '../../../common/components/form/StringField.jsx';
 export default class DetailsForm extends Component {
 
   state = {
+    isNew: !this.props.value.identifier,
     identifier: this.props.value.identifier,
     shortname: this.props.value.shortname,
     fullname: this.props.value.fullname,
@@ -23,7 +24,8 @@ export default class DetailsForm extends Component {
   }
 
   onSave = (evt) => {
-    this.props.onSave(this.state);
+    const { isNew, ...rest } = this.state; // Remove isNew
+    this.props.onSave(rest);
     evt.preventDefault();
   }
 
@@ -39,7 +41,7 @@ export default class DetailsForm extends Component {
             <StringField
               name="identifier"
               label="Identifier"
-              readOnly={true}
+              readOnly={!this.state.isNew}
               value={this.state.identifier}
               onChange={(e) => this.onChange({ identifier: e.target.value })}/>
 
@@ -88,11 +90,13 @@ export default class DetailsForm extends Component {
           </form>
 
           <div className="footer">
-            <button
-              className="btn small red delete"
-              onClick={this.props.onDelete}>
-              <span className="icon">&#xf1f8;</span> Delete
-            </button>
+            {!this.state.isNew &&
+              <button
+                className="btn small red delete"
+                onClick={this.props.onDelete}>
+                <span className="icon">&#xf1f8;</span> Delete
+              </button>
+            }
 
             <button
               className="btn small outline"

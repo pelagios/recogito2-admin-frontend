@@ -7,6 +7,17 @@ import NavigationMenu from '../../common/components/navigationmenu/NavigationMen
 
 import './App.scss';
 
+const AUTHORITY_TEMPLATE = {
+  identifier: '',
+  shortname: '',
+  fullname: '',
+  homepage: '',
+  shortcode: '',
+  url_patterns: '',
+  color: '',
+  file: null
+};
+
 export default class App extends Component {
 
   state = {
@@ -44,6 +55,10 @@ export default class App extends Component {
     });
   }
 
+  onAddNew = () => {
+    this.setState({ selected: {...AUTHORITY_TEMPLATE} });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -55,7 +70,7 @@ export default class App extends Component {
           onSelect={this.handleSelectAuthority} />  
         
         <div className="footer">
-          <button className="btn" onClick={this.props.onAddNew}>
+          <button className="btn" onClick={this.onAddNew}>
             <span className="icon">&#xf055;</span> Add Authority File
           </button>
         </div>
