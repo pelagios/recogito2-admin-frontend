@@ -1,4 +1,5 @@
 @import "../../styles/globals/colors";
+@import "../../styles/globals/mixins";
 
 .clicktrap {
   position:fixed;
@@ -26,15 +27,16 @@
   right:0;
   left:0;
   margin:auto;
-  border-radius:2px;
   box-shadow:2px 2px 42px rgba(0, 0, 0, 0.4);
-  overflow:hidden;
   display:flex;
   flex-direction:column;
+
+  @include rounded-corners(2px);
 }
 
 .modal-header {
   background-color:$almost-black;
+  @include rounded-corners-top(2px);
 
   h1 {
     color:#fff;

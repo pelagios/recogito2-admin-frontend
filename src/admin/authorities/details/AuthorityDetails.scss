@@ -1,1 +1,51 @@
+@import "../../../common/styles/globals/colors";
+@import "../../../common/styles/globals/mixins";
 @import "../../../common/styles/globals/forms";
+
+.authority-details-modal {
+
+  .modal-header h1.title, label, form.crud input {
+    font-size:15px;
+  }
+
+  form {
+    padding:20px 0;
+
+    dl {
+      margin:2px 0;
+    }
+
+  }
+
+  #file_name, #color { width:220px; }
+
+  .color {
+
+    dd { position:relative; }
+
+    .color-sample {
+      position:absolute;
+      top:9px;
+      right:-33px;
+      display:inline-block;
+      width:27px;
+      height:27px;
+      background-color:$form-grey-border;
+      cursor:pointer;
+
+      @include rounded-corners(4px);
+
+    }
+
+    .swatches-picker {
+      position:absolute;
+    }
+
+  }
+
+  .btn.add-file {
+    padding:7px 35px;
+    vertical-align:baseline;
+  }
+
+}
