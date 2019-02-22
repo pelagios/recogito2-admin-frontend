@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 const fmt = new Intl.NumberFormat('en-US');
 
 const TYPE_ICONS = {
-  PLACE : '\uf041',
-  PERSON: '\uf007'
+  'PLACE': '\uf041',
+  'PERSON': '\uf007'
 }
 
 export default class AuthorityList extends Component {
@@ -19,11 +19,11 @@ export default class AuthorityList extends Component {
           <td className="conflicted-warning"><span className="icon">&#xf071;</span></td> :
           <td></td>
         }
-        <td><span className="icon">{'\uf041'}</span></td>
+        <td><span className="icon">{TYPE_ICONS[authority.type]}</span></td>
         <td>
           { 
             authority.homepage ? 
-              authority.shortname : <a href="">{authority.shortname}</a>
+              authority.shortname : <a href={authority.homepage} target="_blank" rel="noopener noreferrer">{authority.shortname}</a>
           }
         </td>
         <td>{authority.fullname}</td>

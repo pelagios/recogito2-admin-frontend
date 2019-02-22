@@ -61,4 +61,5 @@
 
 .modal-body {
   background-color:#fff;
+  @include rounded-corners-bottom(2px);
 }

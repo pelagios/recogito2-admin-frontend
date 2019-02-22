@@ -36,7 +36,7 @@ export default class ColorField extends Component {
   render() {
     return (
       <dl className="color">
-        <dt><label for={this.props.name}>{this.props.label}</label></dt>
+        <dt><label htmlFor={this.props.name}>{this.props.label}</label></dt>
         <dd>
           <input
             type="text"

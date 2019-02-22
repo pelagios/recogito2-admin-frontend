@@ -25,6 +25,10 @@ export default class App extends Component {
     this.setState({ selected: authority });
   }
 
+  handleDeleted = (authority) => {
+    // TODO
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -44,6 +48,7 @@ export default class App extends Component {
         {this.state.selected && 
           <AuthorityDetails 
             value={this.state.selected} 
+            onDelete={this.handleDeleted}
             onCancel={() => this.setState({ selected: null })} />
         }
       </React.Fragment>
