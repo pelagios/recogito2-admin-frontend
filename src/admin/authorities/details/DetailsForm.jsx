@@ -91,8 +91,7 @@ export default class DetailsForm extends Component {
             <FileField
               name="file"
               label="Upload File"
-              value={this.state.filename}
-              onChange={(e) => this.onChange({ file: e.target.value })}
+              onChange={(e) => this.onChange({ file: e })}
               buttonClass="btn add-file" />
           </form>
 
