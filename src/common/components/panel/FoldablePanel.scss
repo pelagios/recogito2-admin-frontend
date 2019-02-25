@@ -34,9 +34,24 @@
     border-style:solid;
     border-width:0 1px 1px 1px;
     border-color:$almost-black;
-    min-height:40px;
+    min-height:0;
 
     @include rounded-corners-bottom(3px);
   }
+
+  .inner-enter,
+  .inner-enter-done {
+    min-height:40px;
+    transition:min-height 0.15s linear;
+    -webkit-transition:min-height 0.15s linear;
+  }
+
+  .inner-exit,
+  .inner-exit-done {
+    min-height:0;
+    transition:min-height 0.15s linear;
+    -webkit-transition:min-height 0.15s linear;
+  }
+
 
 }
