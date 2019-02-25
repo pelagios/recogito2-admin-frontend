@@ -108,7 +108,8 @@ module.exports = {
   // In production, we only want to load the app code.
   entry: {
     authorities: [paths.appSrc + '/admin/authorities/App.jsx'],
-    users: [paths.appSrc + '/admin/users/App.jsx']
+    users: [paths.appSrc + '/admin/users/App.jsx'],
+    maintenance: [paths.appSrc + '/admin/maintenance/App.jsx']
   },
   output: {
     // The build folder.
@@ -435,6 +436,24 @@ module.exports = {
       template: paths.appHtml + '/users.scala.html',
       chunks: ['users'],
       filename: 'users.scala.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.appHtml + '/maintenance.scala.html',
+      chunks: ['maintenance'],
+      filename: 'maintenance.scala.html',
       minify: {
         removeComments: true,
         collapseWhitespace: false,

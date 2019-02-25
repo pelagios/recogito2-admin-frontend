@@ -87,6 +87,10 @@ module.exports = {
     users: [
       require.resolve('react-dev-utils/webpackHotDevClient'),
       paths.appSrc + '/admin/users/App.jsx'
+    ],
+    maintenance: [
+      require.resolve('react-dev-utils/webpackHotDevClient'),
+      paths.appSrc + '/admin/maintenance/App.jsx'
     ]
   },
   output: {
@@ -333,6 +337,12 @@ module.exports = {
       chunks: ['users'],
       template: paths.appHtml + '/dev.html',
       filename: 'users'
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      chunks: ['maintenance'],
+      template: paths.appHtml + '/dev.html',
+      filename: 'maintenance'
     }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
