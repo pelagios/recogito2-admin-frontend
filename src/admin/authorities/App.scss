@@ -45,6 +45,10 @@
       background-color:rgba(0,0,0,0.05);
     }
 
+    tr:last-child td {
+      border-bottom:none;
+    }
+
   }
 
 }

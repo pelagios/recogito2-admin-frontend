@@ -86,7 +86,7 @@ export default class DetailsForm extends Component {
               name="color"
               label="Color"
               value={this.state.color}
-              onChange={(e) => this.onChange({ color: e.target.value })} />
+              onChange={(hex) => this.onChange({ color: hex })} />
 
             <FileField
               name="file"
