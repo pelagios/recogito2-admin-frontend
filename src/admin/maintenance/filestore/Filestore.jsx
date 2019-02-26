@@ -26,7 +26,7 @@ export default class Filestore extends Component {
         title="User Filestore">
 
         <span className="label">
-          Current filestore size: 
+          Current filestore usage: 
         </span>
 
         <span className="value">
