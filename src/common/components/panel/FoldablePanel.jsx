@@ -14,8 +14,14 @@ export default class FoldablePanel extends Component {
   }
 
   render() {
+    const classNames = ['foldable-panel'];
+    if (this.state.open)
+      classNames.push('open');
+    else 
+      classNames.push('closed');
+
     return (
-      <div className="foldable-panel">
+      <div className={classNames.join(' ')}>
         <h2 onClick={this.toggle}>
           <span className="icon toggle">{this.state.open ? '\uf106' : '\uf107'}</span>
           {this.props.title}

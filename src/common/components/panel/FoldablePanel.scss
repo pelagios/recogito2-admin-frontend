@@ -1,6 +1,14 @@
 @import "../../styles/globals/colors";
 @import "../../styles/globals/mixins";
 
+.foldable-panel.closed {
+
+  h2 {
+    @include rounded-corners-bottom(3px);
+  }
+
+}
+
 .foldable-panel {
   @include rounded-corners(3px);
 
@@ -32,7 +40,7 @@
   .inner {
     background-color:#fff;
     border-style:solid;
-    border-width:0 1px 1px 1px;
+    border-width:0 1px 0 1px;
     border-color:$almost-black;
     max-height:0;
     overflow:hidden;
@@ -40,19 +48,27 @@
     @include rounded-corners-bottom(3px);
   }
 
-  .inner-enter,
-  .inner-enter-done {
+  .inner.inner-enter,
+  .inner.inner-enter-done {
+    border-bottom-width:1px;
     max-height:400px;
     transition:max-height 0.25s linear;
     -webkit-transition:max-height 0.25s linear;
   }
 
-  .inner-exit,
-  .inner-exit-done {
+  .inner.inner-exit-active {
+    border-bottom-width:1px;
+  }
+
+  .inner.inner-exit,
+  .inner.inner-exit-done {
     max-height:0;
     transition:max-height 0.25s linear;
     -webkit-transition:max-height 0.25s linear;
   }
 
+  .inner.inner-exit-done {
+    border-bottom-width:0;
+  }
 
 }
