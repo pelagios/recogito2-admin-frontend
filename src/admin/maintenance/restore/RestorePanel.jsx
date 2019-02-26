@@ -19,15 +19,16 @@ export default class App extends Component {
 
   handleRestoreBackup = () => {
     const formdata = new FormData();
-    formdata.append('file', this.state.file);
+    formdata.append('backup', this.state.file);
 
-    axios.post('/admin/restore', formdata)
-    .then(result => {
-      this.setState({ successMessage: 'Ok.' });
-    })
-    .catch(error => {
-      this.setState({ errorMessage: `Error: ${error.response.statusText}` });
-    });    
+    const config =  { headers: { 'Content-Type': 'multipart/form-data' } };
+    axios.post('/admin/restore', formdata,  config)
+      .then(result => {
+        this.setState({ successMessage: 'Ok.' });
+      })
+      .catch(error => {
+        this.setState({ errorMessage: `Error: ${error.response.statusText}` });
+      });    
   }
 
   render() {
@@ -48,7 +49,7 @@ export default class App extends Component {
             name="file"
             buttonOnly
             label="Upload ZIP backup package"
-            onChange={(f) => this.handleAttachBackup({ file: f })}
+            onChange={this.handleAttachBackup}
             buttonClass="btn add-file" />
 
           {this.state.successMessage && <span className="success message">{this.state.successMessage}</span> }
