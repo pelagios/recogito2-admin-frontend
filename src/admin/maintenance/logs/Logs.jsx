@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import FoldablePanel from '../../../common/components/panel/FoldablePanel.jsx';
 
-import './ElasticSearch.scss';
+import './Logs.scss';
 
-export default class ElasticSearch extends Component {
+export default class Logs extends Component {
 
   render() {
     return (
       <FoldablePanel
-        className="elasticsearch"
-        title="ElasticSearch">
+        className="logs"
+        title="Logs">
 
       </FoldablePanel>
     );

@@ -40,7 +40,7 @@ export default class PendingUploads extends Component {
     return (
       <FoldablePanel
         className="pending-uploads"
-        title="Pending Uploads Folder">
+        title="Pending Uploads">
 
         <table>
           <thead>
@@ -51,7 +51,12 @@ export default class PendingUploads extends Component {
             </tr>
           </thead>
 
-          <tbody>{rows}</tbody>
+          <tbody>
+            {rows.length > 0 ?
+              {rows} :
+              <tr><td colspan="3" className="no-pending-uploads">There are no pending uploads</td></tr>
+            }
+          </tbody>
         </table>
         <div className="footer">
           <button className="btn red" onClick={this.handleDeleteAll}>Delete All</button>

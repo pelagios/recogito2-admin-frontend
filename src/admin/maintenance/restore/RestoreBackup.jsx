@@ -33,18 +33,23 @@ export default class RestoreBackup extends Component {
 
   render() {
     return (
-      <FoldablePanel title="Document Restore - Admin Version">
+      <FoldablePanel title="Restore Document Backup">
         <form 
           ref={el => this._form = el}
           className="crud restore-backup" 
           onSubmit={this.handleRestoreBackup}>
 
-          <p className="instructions">
-            Restore a ZIP backup package created via the document backup feature. Unlike the normal 
-            Restore feature, which is available to every user, the Admin version allows you to: 
-            i) restore modified backup packages, ii) restore to any users' workspace. (Just modify the 
-            owner metadata in the ZIP accordingly.)
-          </p>
+          <div className="instructions">
+            Restore a document from a ZIP backup package. Unlike the
+            normal <strong>Restore</strong> feature, which is available to every user, this Admin version 
+            allows you to: 
+          
+            <ul>
+              <li>restore <strong>modified</strong> backup packages</li>
+              <li>restore to any users' workspace - just modify the owner metadata in the ZIP accordingly</li>
+            </ul>
+          </div>
+
           <FileField
             name="file"
             buttonOnly

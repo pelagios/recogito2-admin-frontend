@@ -23,10 +23,16 @@ export default class Filestore extends Component {
     return (
       <FoldablePanel
         className="filestore"
-        title="User Filestore">
+        title="File Storage">
+
+        <div className="instructions">
+          The <strong>file storage</strong> is the folder where user uploads 
+          get stored. This folder will take up the most space of your installation.
+          Make sure you reserve enough space.
+        </div>
 
         <span className="label">
-          Current filestore usage: 
+          Current usage: 
         </span>
 
         <span className="value">

@@ -6,4 +6,20 @@
 
 .panels {
   margin:40px 0 20px 0;
+
+  a {
+    color:$almost-black;
+  }
+
+  ul {
+    margin:0;
+    padding:10px 25px;
+  }
+
+  .instructions {
+    margin:0;
+    padding:15px;
+    line-height:160%;
+  }
+
 }
