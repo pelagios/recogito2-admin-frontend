@@ -3,9 +3,9 @@ import axios from 'axios';
 import FoldablePanel from '../../../common/components/panel/FoldablePanel.jsx';
 import FileField from '../../../common/components/form/FileField.jsx';
 
-import './RestorePanel.scss';
+import './RestoreBackup.scss';
 
-export default class App extends Component {
+export default class RestoreBackup extends Component {
 
   state = {
     file: null,

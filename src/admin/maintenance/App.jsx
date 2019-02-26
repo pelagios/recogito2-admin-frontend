@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
-import RestorePanel from './restore/RestorePanel.jsx';
+import RestoreBackup from './restore/RestoreBackup.jsx';
+import PendingUploads from './pending_uploads/PendingUploads.jsx';
 
 import './App.scss';
 
@@ -14,7 +15,8 @@ export default class App extends Component {
         <h1 className="page-title">System Maintenance</h1>
 
         <div className="panels">
-          <RestorePanel />
+          <RestoreBackup />
+          <PendingUploads />
         </div>
       </React.Fragment>
     );

@@ -11,6 +11,7 @@
 
 .foldable-panel {
   @include rounded-corners(3px);
+  margin-bottom:10px;
 
   h2 {
     color:#fff;
