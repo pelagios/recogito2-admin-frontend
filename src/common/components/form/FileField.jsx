@@ -17,12 +17,14 @@ export default class FileField extends Component {
       <dl className="fileupload">
         <dt><label htmlFor={`${this.props.name}_name`}>{this.props.label}</label></dt>
         <dd>
-          <input
-            type="text"
-            id={`${this.props.name}_name`}
-            name={`${this.props.name}_name`}
-            disabled={true}
-            value={(this.state.file && this.state.file.name) || ''} />
+          {!this.props.buttonOnly &&
+            <input
+              type="text"
+              id={`${this.props.name}_name`}
+              name={`${this.props.name}_name`}
+              disabled={true}
+              value={(this.state.file && this.state.file.name) || ''} />
+          }
 
           <input
             type="file"

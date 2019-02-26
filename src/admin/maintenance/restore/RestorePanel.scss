@@ -1,0 +1,39 @@
+@import "../../../common/styles/globals/colors";
+
+form.crud.restore-backup {
+  margin:0;
+  padding:10px 0 25px 0;
+
+  p.instructions {
+    margin:0;
+    padding:15px 15px 25px 15px;
+    line-height:160%;
+    font-style:italic;
+  }
+
+  dl {
+    display:inline-block;
+  }
+
+  dt {
+    width:200px;
+  }
+
+  dd {
+    margin-inline-start:20px;
+  }
+
+  .message {
+    padding-left:10px;
+    font-weight:bold;
+  }
+
+  .message.error {
+    color:red;
+  }
+
+  .message.success {
+    color:green;
+  }
+
+}

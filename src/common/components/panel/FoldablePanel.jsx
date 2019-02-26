@@ -23,7 +23,7 @@ export default class FoldablePanel extends Component {
         <CSSTransition
           classNames="inner"
           in={this.state.open}
-          timeout={150}>
+          timeout={250}>
 
           <div className="inner">
             {this.props.children}

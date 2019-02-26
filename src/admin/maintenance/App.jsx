@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
-import FoldablePanel from '../../common/components/panel/FoldablePanel.jsx';
+import RestorePanel from './restore/RestorePanel.jsx';
 
 import './App.scss';
 
@@ -14,7 +14,7 @@ export default class App extends Component {
         <h1 className="page-title">System Maintenance</h1>
 
         <div className="panels">
-          <FoldablePanel title="Document Backup & Restore" />
+          <RestorePanel />
         </div>
       </React.Fragment>
     );
