@@ -10,10 +10,21 @@ export default class PendingUploads extends Component {
     uploads: []
   }
 
-  componentDidMount() {
+  refresh() {
     axios.get('/admin/maintenance/uploads.json')
       .then(result => {
         this.setState({ uploads: result.data });
+      });
+  }
+
+  componentDidMount() {
+    this.refresh();
+  }
+
+  handleDeleteAll = () => {
+    axios.delete('/admin/maintenance/uploads')
+      .then(result => {
+        this.refresh();
       });
   }
 
@@ -43,7 +54,7 @@ export default class PendingUploads extends Component {
           <tbody>{rows}</tbody>
         </table>
         <div className="footer">
-          <button className="btn red">Delete All</button>
+          <button className="btn red" onClick={this.handleDeleteAll}>Delete All</button>
         </div>
       </FoldablePanel>
     );
