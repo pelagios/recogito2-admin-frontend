@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
 import RestoreBackup from './restore/RestoreBackup.jsx';
 import PendingUploads from './pending_uploads/PendingUploads.jsx';
+import Filestore from './filestore/Filestore.jsx';
 
 import './App.scss';
 
@@ -17,6 +18,7 @@ export default class App extends Component {
         <div className="panels">
           <RestoreBackup />
           <PendingUploads />
+          <Filestore />
         </div>
       </React.Fragment>
     );
