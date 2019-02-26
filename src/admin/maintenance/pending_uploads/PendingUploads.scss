@@ -1,0 +1,24 @@
+@import "../../../common/styles/globals/colors";
+
+.pending-uploads {
+  position:relative;
+
+  table {
+    width:100%;
+    border-collapse:collapse;
+  }
+
+  thead th, tbody td {
+    font-size:14px;
+    text-align:left;
+    padding:5px 8px;
+    margin:0;
+    border-bottom:1px solid $lightgrey-border;
+  }
+
+  .footer {
+    padding:12px 8px;
+    text-align:right;
+  }
+
+}

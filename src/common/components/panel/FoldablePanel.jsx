@@ -15,6 +15,10 @@ export default class FoldablePanel extends Component {
 
   render() {
     const classNames = ['foldable-panel'];
+
+    if (this.props.className)
+      classNames.push(this.props.className);
+
     if (this.state.open)
       classNames.push('open');
     else 
