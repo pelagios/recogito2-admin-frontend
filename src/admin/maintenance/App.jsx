@@ -4,6 +4,7 @@ import NavigationMenu from '../../common/components/navigationmenu/NavigationMen
 import RestoreBackup from './restore/RestoreBackup.jsx';
 import PendingUploads from './pending_uploads/PendingUploads.jsx';
 import Filestore from './filestore/Filestore.jsx';
+import ElasticSearch from './elasticsearch/ElasticSearch.jsx';
 
 import './App.scss';
 
@@ -19,6 +20,7 @@ export default class App extends Component {
           <RestoreBackup />
           <PendingUploads />
           <Filestore />
+          <ElasticSearch />
         </div>
       </React.Fragment>
     );
