@@ -23,6 +23,8 @@ const Number = (props) => {
 
 }
 
+const REFRESH_INTERVAL_MS = 1000;
+
 export default class App extends Component {
 
   state = {
@@ -52,6 +54,8 @@ export default class App extends Component {
           contributionHistory: result.data.contribution_stats.contribution_history,
           recentContributions: result.data.recent_contributions,
           recentDocuments: result.data.recent_documents
+        }, () => {
+          window.setTimeout(this.refresh, REFRESH_INTERVAL_MS);
         });
       });
   }
