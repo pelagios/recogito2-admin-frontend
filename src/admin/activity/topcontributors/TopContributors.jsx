@@ -9,7 +9,7 @@ export default class TopContributors extends Component {
     const maxScore = Math.max(...this.props.scores.map(s => s.value));
 
     const rows = this.props.scores.map(score => 
-      <tr>
+      <tr key={score.username}>
         <td><a href={`/${score.username}`}>{score.username}</a></td>
         <td>
           <div className="meter">
@@ -29,7 +29,9 @@ export default class TopContributors extends Component {
       <div className="cell w5 h3">
         <div className="metric top-contributors">
           <table>
-            {rows}
+            <tbody>
+              {rows}
+            </tbody>
           </table>
           <span className="caption">Top Contributors</span>
         </div>

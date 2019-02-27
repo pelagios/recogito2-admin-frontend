@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
+import NumberFormat from 'react-number-format';
+
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
-import Number from './components/Number.jsx';
-import TopContributors from './components/TopContributors.jsx';
+import TopContributors from './topcontributors/TopContributors.jsx';
+import EditHistory from './edithistory/EditHistory.jsx';
+import RightNow from './rightnow/RightNow.jsx';
 
 import './App.scss';
+
+const Number = (props) => {
+
+  return (
+    <span className="number">
+      <NumberFormat
+        displayType="text"
+        value={props.value}
+        thousandSeparator={true} />
+    </span>
+  )
+
+}
 
 export default class App extends Component {
 
@@ -15,10 +31,15 @@ export default class App extends Component {
     totalVisits: null,
     totalUsers: null,
     topContributors: [], // Highscores
-    recentContributions: [] // Timeline
+    recentContributions: [], // Timeline
+    recentDocuments: []
   }
 
   componentDidMount() {
+    this.refresh();
+  }
+
+  refresh = () => {
     axios.get('/admin/stats.json')
       .then(result => {
         this.setState({
@@ -27,7 +48,8 @@ export default class App extends Component {
           totalVisits: result.data.total_visits,
           totalUsers: result.data.total_users,
           topContributors: result.data.contribution_stats.by_user,
-          recentContributions: result.data.recent_contributions
+          recentContributions: result.data.recent_contributions,
+          recentDocuments: result.data.recent_documents
         });
       });
   }
@@ -57,21 +79,13 @@ export default class App extends Component {
             { this.numberCell(12, 1, 'registered-users', 'Registered Users', this.state.totalUsers) }
           </div>
 
-          <div className="cell w7 h2">
-            <div className="metric activity-history">
-              <div id="activity-history-chart"></div>
-              <span className="caption">30-Day Activity</span>
-            </div>
-          </div>
+          <EditHistory />
 
           <TopContributors scores={this.state.topContributors} />
-
-          <div className="cell w7 h3">
-            <div className="metric right-now">
-              <div className="container"><table></table></div>
-              <span className="caption">Recogito Right Now</span>
-            </div>
-          </div>
+          
+          <RightNow 
+            contributions={this.state.recentContributions}
+            documents={this.state.recentDocuments} />
 
           { this.numberCell(3, 2, 'total-visits', 'Total Visits', this.state.totalVisits) }
         </div>
