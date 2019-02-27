@@ -107,6 +107,7 @@ module.exports = {
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the app code.
   entry: {
+    activity: [paths.appSrc + '/admin/activity/App.jsx'],
     authorities: [paths.appSrc + '/admin/authorities/App.jsx'],
     users: [paths.appSrc + '/admin/users/App.jsx'],
     maintenance: [paths.appSrc + '/admin/maintenance/App.jsx']
@@ -413,6 +414,24 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.appHtml + '/activity.scala.html',
+      chunks: ['activity'],
+      filename: 'activity.scala.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml + '/authorities.scala.html',

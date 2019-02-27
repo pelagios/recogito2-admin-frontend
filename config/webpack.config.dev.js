@@ -80,6 +80,10 @@ module.exports = {
     index: [
       require.resolve('react-dev-utils/webpackHotDevClient')
     ],
+    activity: [
+      require.resolve('react-dev-utils/webpackHotDevClient'),
+      paths.appSrc + '/admin/activity/App.jsx'
+    ],
     authorities: [
       require.resolve('react-dev-utils/webpackHotDevClient'),
       paths.appSrc + '/admin/authorities/App.jsx'
@@ -325,6 +329,12 @@ module.exports = {
       inject: false,
       chunks: ['index'],
       template: paths.index
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      chunks: ['activity'],
+      template: paths.appHtml + '/dev.html',
+      filename: 'activity'
     }),
     new HtmlWebpackPlugin({
       inject: true,
