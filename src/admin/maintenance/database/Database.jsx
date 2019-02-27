@@ -8,8 +8,9 @@ export default class Database extends Component {
       <FoldablePanel
         className="database"
         title="Database">
+
         <div className="instructions">
-          Recogito stores the follwing data in the database:
+          Recogito stores the following data in the database:
           <ul>
             <li>User account information</li>
             <li>User folder hierarchies</li>
@@ -20,6 +21,7 @@ export default class Database extends Component {
           Make sure you perform regular backups of your database. Instructions for set up backups 
           are <a href="https://github.com/pelagios/recogito2/wiki/Notes-on-Postgres-backup" target="_blank">here</a>.
         </div>
+
       </FoldablePanel>
     );
   }
