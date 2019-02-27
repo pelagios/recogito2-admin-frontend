@@ -79,7 +79,7 @@ export default class App extends Component {
             { this.numberCell(12, 1, 'registered-users', 'Registered Users', this.state.totalUsers) }
           </div>
 
-          <EditHistory />
+          <EditHistory history={this.state.recentContributions} />
 
           <TopContributors scores={this.state.topContributors} />
           

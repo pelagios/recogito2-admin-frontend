@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TimeAgo from 'react-timeago'
 
 import './RightNow.scss';
 
@@ -16,13 +17,10 @@ export default class RightNow extends Component {
 
   render() {
     const rows = this.props.contributions.map((c, idx) => {
-      const document = this.findDocumentById(c.affects_item.document_id);
-
       return (
         <tr key={idx}>
-          <td>{/* ContributionUtils.format(contribution) */}</td>
           <td><a href="' + documentUrl + '">{this.documentLabel(this.findDocumentById(c.affects_item.document_id))}</a></td>
-          <td className="made-at">{/* Formatting.timeSince(contribution.made_at) */}</td>
+          <td className="made-at"><TimeAgo date={c.made_at} /></td>
         </tr>
       )
     });
