@@ -22,7 +22,7 @@ export default class RestoreBackup extends Component {
     formdata.append('backup', this.state.file);
 
     const config =  { headers: { 'Content-Type': 'multipart/form-data' } };
-    axios.post('/admin/restore', formdata,  config)
+    axios.post('/admin/maintenance/restore', formdata,  config)
       .then(result => {
         this.setState({ successMessage: 'Ok.' });
       })

@@ -40,7 +40,7 @@ export default class DetailsContainer extends Component {
       });
 
       this.setState({ operation_pending: true });
-      axios.post('/admin/gazetteers', formdata)
+      axios.post('/admin/authorities', formdata)
         .then(result => {
           this.setState({ operation_pending: false });
           this.props.onSave(authority);
@@ -59,7 +59,7 @@ export default class DetailsContainer extends Component {
 
       onConfirm: () => {
         this.setState({ operation_pending: true });
-        axios.delete(`/admin/gazetteers/${encodeURIComponent(this.props.value.identifier)}`).then(result => {
+        axios.delete(`/admin/authorities/${encodeURIComponent(this.props.value.identifier)}`).then(result => {
           this.setState({ selected_user: null }, () => window.location.reload());
         }).then(result => {
           this.setState({ operation_pending: false });
