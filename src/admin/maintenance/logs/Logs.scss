@@ -1,0 +1,16 @@
+@import "../../../common/styles/globals/colors";
+@import "../../../common/styles/globals/mixins";
+
+.logs {
+
+  .log-path {
+    background-color:$blueish-white;
+    width:max-content;
+    padding:4px 10px;
+    border:1px solid $lightgrey-border-darker;
+    font-weight:bold;
+
+    @include rounded-corners(3px);
+  }
+
+}
