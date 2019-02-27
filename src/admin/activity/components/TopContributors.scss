@@ -1,0 +1,45 @@
+@import "../../../common/styles/globals/colors";
+
+.top-contributors {
+
+  table {
+    padding:10px 15px;
+    box-sizing:border-box;
+    width:100%;
+    text-align:left;
+
+    td {
+      padding:0 5px;
+      vertical-align:middle;
+      font-size:14px;
+      line-height:21px;
+    }
+
+    td:first-child {
+      width:1%;
+
+      a {
+        color:$almost-black;
+        text-decoration:none;
+      }
+
+    }
+
+    td:last-child {
+      width:1%;
+      white-space:nowrap;
+      text-align:right;
+    }
+
+    .meter {
+      height:10px;
+      margin-top:2px;
+    }
+
+    .bar {
+      background-color:$ocean;
+    }
+
+  }
+
+}

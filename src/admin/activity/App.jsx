@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import axios from 'axios';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
 import Number from './components/Number.jsx';
+import TopContributors from './components/TopContributors.jsx';
 
 import './App.scss';
 
@@ -13,6 +14,7 @@ export default class App extends Component {
     totalAnnotations: null,
     totalVisits: null,
     totalUsers: null,
+    topContributors: [], // Highscores
     recentContributions: [] // Timeline
   }
 
@@ -24,6 +26,7 @@ export default class App extends Component {
           totalAnnotations: result.data.total_annotations,
           totalVisits: result.data.total_visits,
           totalUsers: result.data.total_users,
+          topContributors: result.data.contribution_stats.by_user,
           recentContributions: result.data.recent_contributions
         });
       });
@@ -61,12 +64,7 @@ export default class App extends Component {
             </div>
           </div>
 
-          <div className="cell w5 h3">
-            <div className="metric top-contributors">
-              <table></table>
-              <span className="caption">Top Contributors</span>
-            </div>
-          </div>
+          <TopContributors scores={this.state.topContributors} />
 
           <div className="cell w7 h3">
             <div className="metric right-now">
