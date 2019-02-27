@@ -30,8 +30,9 @@ export default class App extends Component {
     totalAnnotations: null,
     totalVisits: null,
     totalUsers: null,
-    topContributors: [], // Highscores
-    recentContributions: [], // Timeline
+    topContributors: [], 
+    contributionHistory: [],
+    recentContributions: [], 
     recentDocuments: []
   }
 
@@ -48,6 +49,7 @@ export default class App extends Component {
           totalVisits: result.data.total_visits,
           totalUsers: result.data.total_users,
           topContributors: result.data.contribution_stats.by_user,
+          contributionHistory: result.data.contribution_stats.contribution_history,
           recentContributions: result.data.recent_contributions,
           recentDocuments: result.data.recent_documents
         });
@@ -79,7 +81,8 @@ export default class App extends Component {
             { this.numberCell(12, 1, 'registered-users', 'Registered Users', this.state.totalUsers) }
           </div>
 
-          <EditHistory history={this.state.recentContributions} />
+          <EditHistory
+            history={this.state.contributionHistory} />
 
           <TopContributors scores={this.state.topContributors} />
           

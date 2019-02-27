@@ -1,13 +1,16 @@
 @import "../../../common/styles/globals/colors";
 
-.activity-history {
+.metric.activity-history {
   position:relative;
   width:100%;
   height:100%;
-  padding:15px 0 25px 0;
+  padding:8px 0 20px 0;
+
+  .inner {
+    position:relative;
+  }
 
   #activity-history-chart {
-    padding:0 20px 0 5px;
     box-sizing:border-box;
     width:100%;
     height:100%;
