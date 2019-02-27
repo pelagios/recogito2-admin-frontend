@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import axios from 'axios';
-import NumberFormat from 'react-number-format';
 import NavigationMenu from '../../common/components/navigationmenu/NavigationMenu.jsx';
+import Number from './components/Number.jsx';
 
 import './App.scss';
 
@@ -29,6 +29,17 @@ export default class App extends Component {
       });
   }
 
+  numberCell(w, h, classname, caption, value) {
+    return (
+      <div className={`cell w${w} h${h}`}>
+        <div className={`metric ${classname}`}>
+          <Number value={value} />
+          <span className="caption">{caption}</span>
+        </div>
+      </div>
+    )
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -36,45 +47,11 @@ export default class App extends Component {
         <h1 className="page-title">Activity Dashboard</h1>        
 
         <div className="dashboard">
-
-          <div className="cell w3 h2">
-            <div className="metric total-edits">
-              <span className="number">
-                <NumberFormat
-                  displayType="text"
-                  value={this.state.totalEdits}
-                  thousandSeparator={true} />
-              </span>
-              <span className="caption">Total Edits</span>
-            </div>
-          </div>
+          { this.numberCell(3, 2, 'total-edits', 'Total Edits', this.state.totalEdits) }
 
           <div className="cell w2 h2 no-pad">
-
-            <div className="cell w12">
-              <div className="metric total-annotations">
-                <span className="number">
-                  <NumberFormat
-                    displayType="text"
-                    value={this.state.totalAnnotations}
-                    thousandSeparator={true} />
-                </span>
-                <span className="caption">Total Annotations</span>
-              </div>
-            </div>
-
-            <div className="cell w12">
-              <div className="metric registered-users">
-                <span className="number">
-                  <NumberFormat
-                    displayType="text"
-                    value={this.state.totalUsers}
-                    thousandSeparator={true} />
-                </span>
-                <span className="caption">Registered Users</span>
-              </div>
-            </div>
-
+            { this.numberCell(12, 1, 'total-annotations', 'Total Annotations', this.state.totalAnnotations) }
+            { this.numberCell(12, 1, 'registered-users', 'Registered Users', this.state.totalUsers) }
           </div>
 
           <div className="cell w7 h2">
@@ -98,18 +75,7 @@ export default class App extends Component {
             </div>
           </div>
 
-          <div className="cell w3 h2">
-            <div className="metric total-visits">
-              <span className="number">
-                <NumberFormat
-                  displayType="text"
-                  value={this.state.totalVisits}
-                  thousandSeparator={true} />
-              </span>
-              <span className="caption">Total Visits</span>
-            </div>
-          </div>
-
+          { this.numberCell(3, 2, 'total-visits', 'Total Visits', this.state.totalVisits) }
         </div>
 
       </React.Fragment>
