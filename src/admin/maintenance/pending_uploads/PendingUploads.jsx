@@ -51,12 +51,15 @@ export default class PendingUploads extends Component {
             </tr>
           </thead>
 
-          <tbody>
-            {rows.length > 0 ?
-              {rows} :
-              <tr><td colSpan="3" className="no-pending-uploads">There are no pending uploads</td></tr>
-            }
-          </tbody>
+          {
+            rows.length > 0 ?
+              <tbody>{rows}</tbody> :
+            
+              <tbody>
+                <tr><td colSpan="3" className="no-pending-uploads">There are no pending uploads</td></tr>
+              </tbody>
+           }
+
         </table>
         <div className="footer">
           <button className="btn red" onClick={this.handleDeleteAll}>Delete All</button>
