@@ -3,7 +3,6 @@ import axios from 'axios';
 import FoldablePanel from '../../../common/components/panel/FoldablePanel.jsx';
 
 import './Logs.scss';
-import Axios from 'axios';
 
 export default class Logs extends Component {
 

@@ -19,7 +19,7 @@ export default class Database extends Component {
             <li>Auxiliary information such as authority file metadata, georesolution and NER task progress, etc.</li>
           </ul>
           Make sure you perform regular backups of your database. Instructions for set up backups 
-          are <a href="https://github.com/pelagios/recogito2/wiki/Notes-on-Postgres-backup" target="_blank">here</a>.
+          are <a href="https://github.com/pelagios/recogito2/wiki/Notes-on-Postgres-backup" target="_blank" rel="noopener noreferrer">here</a>.
         </div>
 
       </FoldablePanel>

@@ -54,7 +54,7 @@ export default class PendingUploads extends Component {
           <tbody>
             {rows.length > 0 ?
               {rows} :
-              <tr><td colspan="3" className="no-pending-uploads">There are no pending uploads</td></tr>
+              <tr><td colSpan="3" className="no-pending-uploads">There are no pending uploads</td></tr>
             }
           </tbody>
         </table>

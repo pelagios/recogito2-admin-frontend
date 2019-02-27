@@ -1,3 +1,6 @@
+@import "../../../common/styles/globals/colors";
+@import "../../../common/styles/globals/mixins";
+
 .filestore {
 
   .inner {
@@ -13,7 +16,12 @@
     }
 
     .value {
+      background-color:$blueish-white;
+      padding:2px 8px;
+      border:1px solid $lightgrey-border-darker;
       font-weight:bold;
+    
+      @include rounded-corners(3px);
     }
   }
 

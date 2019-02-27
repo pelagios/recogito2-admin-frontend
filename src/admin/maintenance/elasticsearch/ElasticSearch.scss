@@ -1,3 +1,12 @@
-.elasticsearch {
-  
+@import "../../../common/styles/globals/colors";
+@import "../../../common/styles/globals/mixins";
+
+.elasticsearch .total-records {
+  background-color:$blueish-white;
+  padding:2px 8px;
+  border:1px solid $lightgrey-border-darker;
+  font-weight:bold;
+  margin-left:8px;
+
+  @include rounded-corners(3px);
 }
