@@ -48,7 +48,7 @@ export default class NavigationMenu extends Component {
           <ul className="menu-options">
             <li><a href="/admin">Activity Dashboard</a></li>
             <li><a href="/admin/users">User Management</a></li>
-            <li><a href="/admin/authorities">Entity Management</a></li>
+            <li><a href="/admin/authorities">Authority Management</a></li>
             <li><a href="/admin/maintenance">Maintenance</a></li>
           </ul>
         </CSSTransition>

@@ -55,7 +55,7 @@ export default class App extends Component {
           recentContributions: result.data.recent_contributions,
           recentDocuments: result.data.recent_documents
         }, () => {
-          window.setTimeout(this.refresh, REFRESH_INTERVAL_MS);
+          // window.setTimeout(this.refresh, REFRESH_INTERVAL_MS);
         });
       });
   }

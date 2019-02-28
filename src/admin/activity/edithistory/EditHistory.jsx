@@ -27,12 +27,16 @@ export default class EditHistory extends Component {
 
     const data = { labels: labels, series: [ series ]};
 
-    const options = { axisX: { 
-        labelInterpolationFnc: function skipLabels(value, index) {
-          return index % 3  === 0 ? value : null;
-        },
-        showGrid: false
-      }};
+    const options = { 
+      fullWidth: true,
+      chartPadding: {
+        top:26
+      },
+      axisX: { 
+        showGrid:false,
+        labelInterpolationFnc: (val, idx) => idx % 3  === 0 ? val : null
+      }
+    };
 
     return (
       <div className="cell w7 h2">
