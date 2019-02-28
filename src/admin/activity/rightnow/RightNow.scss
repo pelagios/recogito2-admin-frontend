@@ -1,11 +1,10 @@
 @import "../../../common/styles/globals/colors";
 
-.right-now {
+.metric.right-now {
   position:relative;
-  padding:0;
+  padding:3px 0 22px 0;
 
   .container {
-    border-bottom:23px solid transparent;
     height:100%;
     overflow:hidden !important;
     box-sizing:border-box;
@@ -16,13 +15,15 @@
     width:100%;
     border-collapse:collapse;
 
-    tr.even td {
+    tr:nth-child(even) td {
       background-color:$blueish-white;
     }
 
     td {
       padding:2px 8px;
-      font-size:15px;
+      font-size:14px;
+      line-height:19px;
+      font-weight:bold;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
