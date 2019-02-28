@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TimeAgo from 'react-timeago'
+import {format} from '../../../common/util/Contribution.js';
 
 import './RightNow.scss';
 
@@ -11,15 +12,17 @@ export default class RightNow extends Component {
     });
   }
 
-  documentLabel = (d) => {
-    if (d) return d.author ? `${d.author}: ${d.title}` : d.title;
-  }
-
   render() {
     const rows = this.props.contributions.map((c, idx) => {
+      
+      const doc = this.findDocumentById(c.affects_item.document_id);
+      const label = doc && (doc.author ? `${doc.author}: ${doc.title}` : doc.title);
+      const url = `/annotation/${c.affects_item.annotation_id}`
+      
       return (
         <tr key={idx}>
-          <td><a href="' + documentUrl + '">{this.documentLabel(this.findDocumentById(c.affects_item.document_id))}</a></td>
+          <td>{format(c)}</td>
+          <td><a href={url}>{label}</a></td>
           <td className="made-at"><TimeAgo date={c.made_at} /></td>
         </tr>
       )
