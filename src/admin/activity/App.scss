@@ -6,6 +6,7 @@
 $cell-height:90px;
 
 .cell {
+  font-family:PTSansNarrow;
   position:relative;
   display:inline-block;
   box-sizing:border-box;
@@ -81,7 +82,6 @@ $cell-height:90px;
    }
 
    .number {
-     font-family:PTSansNarrow;
      padding:3% 0;
      font-size:23px;
    }
