@@ -18,11 +18,11 @@ export default class EditHistory extends Component {
 
   render() {
     const labels = this.props.history.map(e => {
-      return formatDate(new Date(e.date));
+      return formatDate(new Date(e[0]));
     });
 
     const series = this.props.history.map(e => {
-      return e.value;
+      return e[1];
     });
 
     const data = { labels: labels, series: [ series ]};
