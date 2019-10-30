@@ -56,7 +56,7 @@ export function confirm(properties) {
 
   const onNo = () => {
     promptRoot.remove();
-    properties.onCancel();
+    properties.onCancel && properties.onCancel();
   }
 
   render(

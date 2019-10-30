@@ -36,8 +36,17 @@
   background-color:$error-msg-type;
 }
 
+.btn.red.outline {
+  background-color:transparent;
+  color:$error-msg-type;
+}
+
 .btn.red:hover {
   background-color:darken($error-msg-type, 5%);
+}
+
+.btn.red.outline:hover {
+  background-color:rgba($error-msg-type, 0.2);
 }
 
 .btn.red.disabled,

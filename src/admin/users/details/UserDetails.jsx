@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import copy from 'copy-to-clipboard';
+import { confirm } from '../../../common/components/confirm/Confirm.js';
 import Modal from '../../../common/components/modal/Modal.jsx';
 import CheckboxField from '../../../common/components/form/CheckboxField.jsx';
 import StringField from '../../../common/components/form/StringField.jsx';
@@ -24,15 +27,29 @@ export default class UserDetails extends Component {
     return url.replace(/^https?:\/\//i, '');
   }
 
-  handleChangeQuota = (evt) => {
+  handleChangeQuota = evt => {
     this.setState({ quota: evt.target.value });
   }
 
-  handleSetAdmin = (evt) => {
+  handleSetAdmin = evt => {
     this.setState({ is_admin: evt.target.checked });
   }
 
-  onSave = (evt) => {
+  onResetPassword = evt => {
+    const exec = () => axios.post(`/admin/user/${this.props.username}/reset`).then(response => {
+      copy(response.data.temporary);
+      alert(`Password reset to: ${response.data.temporary}. Password copied to clipboard!`);
+    });
+
+    confirm({
+      title: 'Reset Password',
+      type: 'warning',
+      message: 'Are you sure? This is not reversible.',
+      onConfirm: exec
+    });
+  }
+
+  onSave = evt => {
     evt.preventDefault();
 
     this.props.onSave({
@@ -94,6 +111,12 @@ export default class UserDetails extends Component {
             className="btn small red delete"
             onClick={this.props.onDeleteUser}>
             <span className="icon">&#xf1f8;</span> Delete This Account
+          </button>
+
+          <button
+            className="btn small red outline reset"
+            onClick={this.onResetPassword}>
+            Reset Password
           </button>
 
           <button
